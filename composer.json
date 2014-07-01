@@ -1,6 +1,13 @@
 {
-    "name": "shuber/curl",
+    "name": "tdukart/curl",
     "license": "MIT",
+    "authors": [
+        {
+            "name": "Sean Huber",
+            "email": "shuber@huberry.com",
+            "role": "Original Developer"
+        },
+    ],
     "keywords": ["curl","spider", "bot", "scraper"],
     "type": "library",
     "description": "PHP Wrapper for Curl",
