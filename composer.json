@@ -6,7 +6,7 @@
             "name": "Sean Huber",
             "email": "shuber@huberry.com",
             "role": "Original Developer"
-        },
+        }
     ],
     "keywords": ["curl","spider", "bot", "scraper"],
     "type": "library",
