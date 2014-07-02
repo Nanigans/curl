@@ -2,7 +2,7 @@
 
 A basic CURL wrapper for PHP (see [http://php.net/curl](http://php.net/curl) for more information about the libcurl extension for PHP)
 
-Based on [https://github.com/hamstar/curl] and [https://github.com/rafamaciel/curl]. Namespaced and tagged for easy use with Composer and Laravel.
+Based on https://github.com/hamstar/curl and https://github.com/rafamaciel/curl. Namespaced and tagged for easy use with Composer and Laravel.
 
 
 ## Installation
@@ -12,9 +12,15 @@ Based on [https://github.com/hamstar/curl] and [https://github.com/rafamaciel/cu
 Add composer.json package in your project file or create a new file.  
 ```json
 {
-    "require":{
-        "shuber/curl": "dev-master"
+  "repositories": [
+    {
+      "type": "vcs",
+      "url": "https://github.com/tdukart/curl"
     }
+  ],
+  "require": {
+    "tdukart/curl": "1.0.*"
+  }
 }
 ```  
 Get the composer and install, or run the updater.  
