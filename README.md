@@ -2,6 +2,8 @@
 
 A basic CURL wrapper for PHP (see [http://php.net/curl](http://php.net/curl) for more information about the libcurl extension for PHP)
 
+Based on [https://github.com/hamstar/curl] and [https://github.com/rafamaciel/curl]. Namespaced and tagged for easy use with Composer and Laravel.
+
 
 ## Installation
 
