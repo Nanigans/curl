@@ -67,7 +67,9 @@ class Curl {
      * @access protected
     **/
     protected $userpwd;
-        
+
+    protected $lastRequestInfo;
+
     /**
      * Initializes a Curl object
      *
@@ -159,23 +161,25 @@ class Curl {
     function request($method, $url, $vars = array(), $enctype = null) {
         $this->request = curl_init();
         if (is_array($vars) && $enctype != 'multipart/form-data') $vars = http_build_query($vars, '', '&');
-        
+
         $this->set_request_method($method);
         $this->set_request_options($url, $vars);
         $this->set_request_headers();
-        
+
         $response = curl_exec($this->request);
         if (!$response) {
           throw new CurlException(curl_error($this->request), curl_errno($this->request));
         }
-        
+
         $response = new CurlResponse($response);
-        
+
+        $this->lastRequestInfo = curl_getinfo($this->request);
+
         curl_close($this->request);
-        
+
         return $response;
     }
-    
+
     /**
      * Sets the user and password for HTTP auth basic authentication method.
      *
@@ -273,7 +277,7 @@ class Curl {
      * @return array Associative array of curl options
      */
     function get_request_options() {
-        return curl_getinfo( $this->request );
+        return $this->lastRequestInfo;
     }
 
 }
