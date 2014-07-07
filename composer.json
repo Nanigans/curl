@@ -1,19 +1,24 @@
 {
-    "name": "tdukart/curl",
-    "license": "MIT",
-    "authors": [
-        {
-            "name": "Sean Huber",
-            "email": "shuber@huberry.com",
-            "role": "Original Developer"
-        }
-    ],
-    "keywords": ["curl","spider", "bot", "scraper"],
-    "type": "library",
-    "description": "PHP Wrapper for Curl",
-    "autoload": {
-        "psr-0" : {
-            "":"lib/"
-        }
+  "name": "tdukart/curl",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Sean Huber",
+      "email": "shuber@huberry.com",
+      "role": "Original Developer"
+    },
+    {
+      "name": "Todd Dukart",
+      "email": "tdukart@nanigans.com",
+      "role": "Improvements"
     }
+  ],
+  "keywords": ["curl", "spider", "bot", "scraper"],
+  "type": "library",
+  "description": "PHP Wrapper for Curl",
+  "autoload": {
+    "psr-0": {
+      "": "lib/"
+    }
+  }
 }
