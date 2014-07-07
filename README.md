@@ -157,6 +157,6 @@ Uses [ztest](http://github.com/jaz303/ztest), simply download it to `path/to/cur
 Then run `test/runner.php`
 
 
-## Contact
+## Credits
 
-Problems, comments, and suggestions all welcome: [shuber@huberry.com](mailto:shuber@huberry.com)
+Based on hamstar/curl by [shuber@huberry.com](mailto:shuber@huberry.com).
