@@ -69,7 +69,7 @@ class Curl {
    **/
   protected $userpwd;
 
-  protected $lastRequestInfo;
+  protected $lastRequestInfo = array();
 
   /**
    * Initializes a Curl object
@@ -257,6 +257,7 @@ class Curl {
     # Set some default CURL options
     curl_setopt($this->request, CURLOPT_HEADER, true);
     curl_setopt($this->request, CURLOPT_RETURNTRANSFER, true);
+    curl_setopt($this->request, CURLINFO_HEADER_OUT, true);
     curl_setopt($this->request, CURLOPT_USERAGENT, $this->user_agent);
     if ($this->cookie_file) {
       curl_setopt($this->request, CURLOPT_COOKIEFILE, $this->cookie_file);
