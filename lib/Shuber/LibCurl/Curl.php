@@ -52,7 +52,14 @@ class Curl {
    * @var string
    **/
   public $user_agent;
-
+  
+  /**
+   * Whether to force parameters into the URL, except for POST requests
+   *
+   * @var boolean
+   **/
+   public $force_get_params = false;
+   
   /**
    * Stores resource handle for the current CURL request
    *
@@ -164,6 +171,12 @@ class Curl {
     $this->request = curl_init();
     if (is_array($vars) && $enctype != 'multipart/form-data') {
       $vars = http_build_query($vars, '', '&');
+      if ($method !== 'POST' && $this->force_get_params) {
+        $url_parsed = parse_url($url);
+        $url_parsed['query'] = (array_key_exists('query', $url_parsed) ? $url_parsed['query'] . '&' : '') . $vars;
+        $url = http_build_url($url_parsed);
+        $vars = '';
+      }
     }
 
     $this->set_request_method($method);
@@ -201,6 +214,17 @@ class Curl {
     $this->userpwd = $username . ':' . $password;
 
     return $this;
+  }
+
+  /**
+   * Sets the forceGetParams option, which in non-POST requests, forces the
+   * parameters to be sent in the URL like a GET request. Ignored if the request
+   * is POST or a multipart/form-data enclosure type.
+   *
+   * @param boolean $force_get_params
+   */
+  function setForceGetParams($force_get_params) {
+    $this->force_get_params = $force_get_params;
   }
 
   /**
