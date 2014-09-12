@@ -15,11 +15,11 @@ Add composer.json package in your project file or create a new file.
   "repositories": [
     {
       "type": "vcs",
-      "url": "https://github.com/tdukart/curl"
+      "url": "https://github.com/Nanigans/curl"
     }
   ],
   "require": {
-    "tdukart/curl": "1.0.*"
+    "Nanigans/curl": "1.0.*"
   }
 }
 ```  
